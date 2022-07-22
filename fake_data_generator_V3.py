@@ -63,13 +63,17 @@ def get_Names_Info(nbre_variable):
 				else:
 					nbre_category=r.number_input('How many category ?',min_value=1,max_value=12,step=1,key=f'nbre_category{i}')
 					liste=[]
-					columns=st.columns(4)
-					for m in range(int(nbre_category//4)):
-						for col in columns:
-							liste.append(col.text_input('Enter your category',key=f'{col}{i}'))
-					for j in range(int(nbre_category%4)):
-						liste.append(columns[j].text_input('Enter your category',key=f'rest{j}{i}'))
+					columns=st.columns(6)
+					for m in range(int(nbre_category//3)):
+						for w in range(3):
+							liste.append(columns[2*w].text_input('Category',key=f'quotient{i}{w}{m}'))
+							list_weigth.append(columns[2*w+1].number_input('Weight',min_value=1,step=1,key=f'weight_quotient{i}{w}{m}'))
+					for j in range(int(nbre_category%3)):
+						liste.append(columns[2*j].text_input('Category',key=f'rest{i}{j}'))
+						list_weigth.append(columns[2*j+1].number_input('Weight',min_value=1,step=1,key=f'weight_rest{i}{j}'))
+
 					Info_variables[i].append(liste)
+					Info_variables[i].append(list_weigth)
 
 	return (Name_variables,Info_variables)
 
@@ -96,7 +100,7 @@ def get_values(Info_variables,nbre_ligne,nbre_variable):
 					else:
 						_res= [int(random.gauss(int(moy),int(sig))) for k in range(nbre_ligne)]
 			else:
-				_res = random.choices(Info_variables[i][2],k=nbre_ligne)
+				_res = random.choices(Info_variables[i][2],weigths=Info_variables[i][3],k=nbre_ligne)
 
 		res.append(_res)
 	return res
