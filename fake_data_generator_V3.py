@@ -66,9 +66,9 @@ def get_Names_Info(nbre_variable):
 					columns=st.columns(4)
 					for m in range(int(nbre_category//4)):
 						for col in columns:
-							liste.append(col.text_input('Enter your category',key=col))
+							liste.append(col.text_input('Enter your category',key=f'{col}{i}'))
 					for j in range(int(nbre_category%4)):
-						liste.append(columns[j].text_input('Enter your category',key=j))
+						liste.append(columns[j].text_input('Enter your category',key=f'{j}i'))
 					Info_variables[i].append(liste)
 
 	return (Name_variables,Info_variables)
