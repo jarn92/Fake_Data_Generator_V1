@@ -55,7 +55,7 @@ def get_Names_Info(nbre_variable):
 					if loi=='uniform' :
 						max_=l.number_input('value max',key=f'max{i}')
 						min_=r.number_input('value min',key=f'min{i}')
-						Info_variables[i].append((max_,min_))
+						Info_variables[i].append((min_,max_))
 					elif loi=='gauss':
 						moy=l.number_input('mean',key=f'moy{i}')
 						sig=r.number_input('standard error',key=f'sig{i}')
