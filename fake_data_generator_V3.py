@@ -127,7 +127,7 @@ def main():
 	Values_Sample=get_values(Info_variables,5,nbre_variable)
 	
 
-	Sample = pd.DataFrame(dict(zip(Name_variables,Values_Sample)))
+	Sample = pd.DataFrame(dict(zip(Name_variables,Values)))
 	st.write('Sample of the new data set')
 	st.write(Sample.head())
 	le,ce,ri=st.columns(3)
