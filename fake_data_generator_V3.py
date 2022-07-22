@@ -127,7 +127,7 @@ def main():
 	Values_Sample=get_values(Info_variables,5,nbre_variable)
 	
 
-	Sample = pd.DataFrame(dict(zip(Name_variables,Values)))
+	Sample = pd.DataFrame(dict(zip(Name_variables,Values_Sample)))
 	st.write('Sample of the new data set')
 	st.write(Sample.head())
 	le,ce,ri=st.columns(3)
@@ -135,7 +135,7 @@ def main():
 	if le.button('Create the new Data Set '):
 
 		Values=get_values(Info_variables,nbre_ligne,nbre_variable)
-		df_fake_data=pd.DataFrame(dict(zip(Name_variables,Values_Sample)))
+		df_fake_data=pd.DataFrame(dict(zip(Name_variables,Values)))
 		csv= convert_df(df_fake_data)
 		df_excel = to_excel(df_fake_data)
 				   
