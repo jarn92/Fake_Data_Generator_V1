@@ -63,7 +63,7 @@ def get_Names_Info(nbre_variable):
 				else:
 					nbre_category=r.number_input('How many category ?',min_value=1,max_value=12,step=1,key=f'nbre_category{i}')
 					liste=[]
-					list_weigh=[]
+					list_weight=[]
 					columns=st.columns(6)
 					for m in range(int(nbre_category//3)):
 						for w in range(3):
