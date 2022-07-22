@@ -101,7 +101,7 @@ def get_values(Info_variables,nbre_ligne,nbre_variable):
 					else:
 						_res= [int(random.gauss(int(moy),int(sig))) for k in range(nbre_ligne)]
 			else:
-				_res = random.choices(Info_variables[i][2],weigths=Info_variables[i][3],k=nbre_ligne)
+				_res = random.choices(Info_variables[i][2],weights=Info_variables[i][3],k=nbre_ligne)
 
 		res.append(_res)
 	return res
